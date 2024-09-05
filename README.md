@@ -71,11 +71,14 @@ where:
    - Σ (w_i * x_i) is the total weight of the selected items.
    - The penalty term is added if the total weight exceeds the capacity, with the penalty factor set to 1000.
 
-4. **Selection**
+3. **Selection**
 
    Uses tournament selection to choose individuals for reproduction. A subset of the population is randomly selected, and the individual with the highest fitness within this subset is chosen.
 
-5. **Crossover**
+4. **Mating Pool**
+   The mating pool is created by selecting a subset of the population based on fitness probabilities. Each individual in the mating pool is chosen proportionally to their fitness score. This pool is used to        generate new offspring through crossover and mutation.
+   
+6. **Crossover**
 
    Applies single-point crossover to generate offspring. A crossover point is randomly chosen, and the offspring inherit segments from both parents.
 
@@ -83,7 +86,7 @@ where:
    child1 = parent1[:crossover_point] + parent2[crossover_point:]
    child2 = parent2[:crossover_point] + parent1[crossover_point:]
 
-6. **Random Mutation**
+7. **Random Mutation**
 
    Introduces random changes to individuals to maintain genetic diversity. The mutation is performed as follows:
 
@@ -96,7 +99,7 @@ where:
    - r is a random number between 0.0 and 1.0.
    - Δ is the maximum perturbation (set to 1.0 in this case).
 
-7. **Genetic Algorithm Execution**
+8. **Genetic Algorithm Execution**
 
    Executes the genetic algorithm by evolving the population through selection, crossover, and mutation over several generations. 
 
