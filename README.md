@@ -76,6 +76,7 @@ where:
    Uses tournament selection to choose individuals for reproduction. A subset of the population is randomly selected, and the individual with the highest fitness within this subset is chosen.
 
 4. **Mating Pool**
+
    The mating pool is created by selecting a subset of the population based on fitness probabilities. Each individual in the mating pool is chosen proportionally to their fitness score. This pool is used to        generate new offspring through crossover and mutation.
    
 6. **Crossover**
